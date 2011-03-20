@@ -29,12 +29,4 @@ plot_lwlr <- function(X, y, tau, res) {
 
   pred
   
-  # # convert from Matlab:
-  # axis off;
-  # hold on;
-  # imagesc(pred, [-0.4 1.3]);
-
-  # axis equal;
-  # axis square;
-  # text(res/2 - res/7, res + res/20, ['tau = ' num2str(tau)], 'FontSize', 18);
 }
