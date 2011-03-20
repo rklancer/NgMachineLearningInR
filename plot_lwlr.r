@@ -1,5 +1,5 @@
 plot_lwlr <- function(X, y, tau, res) {
-  x <-    matrix(0,2,1);
+  x    <- matrix(0,2,1);
   pred <- matrix(0, res, res);
   
   # Loop over a linear grid of points, size res x res, in the square bounded by the points 
@@ -17,10 +17,12 @@ plot_lwlr <- function(X, y, tau, res) {
     }
   }
   
-  # matlab "hold on" goes here
+  # produces a semi-readable figure...
   image(pred);              # plot matrix values with heatmap-like colors
-  plot( res/2 * (1+X[y==0,1]) + 0.5, res/2 * (1+X[y==0,2]) + 0.5, pch=1);   #pch=1 -> plot points as "o"s
-  plot( res/2 * (1+X[y==1,1]) + 0.5, res/2 * (1+X[y==1,2]) + 0.5, pch=4);   #pch=0 -> plot points as "x"s
+  par(new=TRUE);            # redraw next plot on the same figure (that's counterintuitive, huh?)
+  plot( res/2 * (1+X[y==0,1]) + 0.5, res/2 * (1+X[y==0,2]) + 0.5, col='white', pch=1);  # pch=1 -> plot points as "o"s
+  par(new=TRUE);
+  plot( res/2 * (1+X[y==1,1]) + 0.5, res/2 * (1+X[y==1,2]) + 0.5, col='black', pch=4);  # pch=4 -> plot points as "x"s
   
   pred
   
