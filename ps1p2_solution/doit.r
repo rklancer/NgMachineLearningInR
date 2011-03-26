@@ -1,3 +1,4 @@
+# source this file to generate 10 plots
 source('load_data.r');
 source('lwlr.r');
 source('plot_lwlr.r');
