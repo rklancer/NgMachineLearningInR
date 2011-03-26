@@ -1,0 +1,19 @@
+This repository contains a few R resources I am developing for working through the Andrew Ng's highly-recommended Machine Learning class, which is freely available online through Stanford Engineering Everywhere at http://see.stanford.edu/see/courseInfo.aspx?coll=348ca38a-3a6d-4052-937d-cb017338d7b1
+
+If I've counted correctly, there are four programming exercises in the course problem sets. However, the "accessory" files for each exercise (setup files, data, plotting routines) are provided only in Matlab format.
+
+I am attempting to kill two birds with one stone, learning R by loosely translating the accessory files to R.
+
+Of course, because I'm learning both R and the course material, I can hardly guarantee that this material is of professional quality. However, I hope someone might find it useful.
+
+Problem files are in directories like this:
+
+ ps1p2/
+   contains problem setup files translated from Matlab, but no solution
+ ps1p2_solution/
+   Also contains my solution.
+   
+Buyer beware. Note that in the course of the solution, I might decide to modify the setup files, and I don't guarantee that I'll update the original folder with my changes. I also don't guarantee that the files support doing the problem *exactly* as described in the problem sets. I might find some variant of the problem is more instructive. 
+
+--Richard Klancer
+  rpk@pobox.com
