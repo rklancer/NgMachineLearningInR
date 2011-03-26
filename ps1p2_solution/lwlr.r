@@ -19,8 +19,6 @@ lwlr <- function(X_train, y_train, x, tau) {
     z = w * (y - h_train)
     grad <- t(X) %*% z - lambda * theta
     
-    print(as.vector(grad))
-    
     grad_norm <- sum( (grad^2)^(1/2) )
     if ( (grad_norm > last_grad_norm) || (grad_norm < min) ) {
       break;
@@ -33,7 +31,6 @@ lwlr <- function(X_train, y_train, x, tau) {
     delta_theta <- as.vector(solve(H, grad))
     theta <- theta + delta_theta
   }
-  print("theta = ")
-  print(theta)
-  as.numeric(logistic(theta %*% x))
+
+  logistic(as.numeric(theta %*% x))
 }

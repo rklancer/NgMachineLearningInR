@@ -4,4 +4,7 @@ source('plot_lwlr.r');
 
 load_data();
 # problem set suggests debugging with a resolution of 50
-plot_lwlr(X, y, 0.1, 50);
+for (tau in exp(seq(log(0.01), log(5),len=10))) {
+  plot_lwlr(X, y, tau, 200)
+  print(tau)
+}
