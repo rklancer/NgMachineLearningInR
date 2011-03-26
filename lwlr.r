@@ -6,6 +6,8 @@ lwlr <- function(X_train, y_train, x, tau) {
   # x = c(x1, x2)
   lambda <- 0.0001
   min <- 1e-4
+  last_grad_norm <- 1e10
+  
   tau2sq <- 2 * tau * tau
   
   xs <- kronecker(t(x), matrix(1, dim(X)[1]))
@@ -19,9 +21,11 @@ lwlr <- function(X_train, y_train, x, tau) {
     
     print(as.vector(grad))
     
-    if ( sum( (grad^2)^(1/2) ) < min ) {
+    grad_norm <- sum( (grad^2)^(1/2) )
+    if ( (grad_norm > last_grad_norm) || (grad_norm < min) ) {
       break;
     }
+    last_grad_norm <- grad_norm
     
     D_iis <- as.vector(w * h_train * (1 - h_train))
     D <- diag(D_iis, nrow = dim(diis)[1])
