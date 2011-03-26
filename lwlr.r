@@ -25,7 +25,7 @@ lwlr <- function(X_train, y_train, x, tau) {
     
     D_iis <- as.vector(w * h_train * (1 - h_train))
     D <- diag(D_iis, nrow = dim(diis)[1])
-    H <- t(X) %*% D %*% X
+    H <- t(X) %*% D %*% X - lambda * diag(2)
     delta_theta <- as.vector(solve(H, grad))
     theta <- theta + delta_theta
   }
